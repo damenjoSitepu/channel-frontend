@@ -12,5 +12,6 @@ export const ICONS: any = {
     FRIENDS: 'Friends',
     LOG: 'Log',
     CLOCK: 'Clock',
-    HEXA_SIGN: 'Hexa Sign'
+    HEXA_SIGN: 'Hexa Sign',
+    STATUS: 'Status'
 };

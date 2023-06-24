@@ -11,5 +11,9 @@ export const SecureAppRouting: Routes = [
     {
         path: 'your-lists',
         loadChildren: () => import('./lists/lists.module').then(m => m.ListsModule)
+    },
+    {
+        path: 'manage-list-status',
+        loadChildren: () => import('./list-status/list-status.module').then(m => m.ListStatusModule)
     }
 ]

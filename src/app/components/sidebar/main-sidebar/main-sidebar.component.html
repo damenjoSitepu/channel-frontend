@@ -13,6 +13,13 @@
                 </span>
                 <span>Your List</span>
             </a>
+            <a [routerLink]="['secure-app','manage-list-status']" class="channel__main_sidebar_list">
+                <span style="background: rgb(2,0,36);
+                background: rgb(112,103,255); background-image: linear-gradient(#40c9ff,#e81cff);">
+                    <channel-icons style="transform: translateY(2px);" class="channel__main_sidebar_list_icon" [type]="'Status'" [color]="'fff'" [size]="18"></channel-icons>
+                </span>
+                <span>Manage List Status</span>
+            </a>
         </div>
     </div>
 </div>
