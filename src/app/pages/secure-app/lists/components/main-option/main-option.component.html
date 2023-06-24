@@ -1,0 +1,18 @@
+<div (clickOutside)="clickOutsideOptions($event)" [excludeBeforeClick]="true" [exclude]="'list_next_section_other'" class="channel__your_list_option">
+    <div class="channel__your_list_option_container">
+        <div (click)="updateMarkStatusList()" class="channel__your_list_option_list">
+            <channel-icons *ngIf="markStatus === 'Standard'" style="transform: translateY(1px)" [size]="13" [color]="'fff'" [type]="'Mark'"></channel-icons>
+            <channel-icons *ngIf="markStatus === 'Urgent'" style="transform: translateY(1px)" [size]="13" [color]="'fff'" [type]="'Trash 2'"></channel-icons>
+            <p>
+                {{ markStatus === 'Standard' ? 'Mark As Urgent' : 'Remove Urgent Status' }}
+            </p>
+        </div>
+        <div (click)="deleteLists()" class="channel__your_list_option_list">
+            <channel-icons style="transform: translateY(1px)" [size]="15" [color]="'fff'" [type]="'Trash'"></channel-icons>
+            <p>Delete</p>
+        </div>
+    </div>
+</div>
+
+
+

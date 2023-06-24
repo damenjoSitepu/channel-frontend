@@ -1,0 +1,47 @@
+$default: #192b46;
+$active: #223c62;
+
+// Modal
+:host {
+    position: absolute;
+    z-index: 6;
+    bottom: -70px;
+    left: -200px;
+    width: 250px;
+    padding: 9px 9px;
+    box-sizing: border-box;
+    background-color: #151e33;
+    border-radius: 8px;
+}
+
+.channel__your_list_option {
+    .channel__your_list_option_container {
+        display: flex;
+        flex-direction: column;
+
+        .channel__your_list_option_list {
+            display: flex;
+            column-gap: 10px;
+            align-items: center;
+            transition: .2s linear;
+            border-radius: 6px;
+            padding: 3px 6px;
+
+            channel-icons {
+                width: 25px;
+            }
+
+            p {
+                display: block;
+                width: 150px;
+                font-size: 13px;
+                text-align: left;
+            }
+
+            &:hover {
+                transition: .2s linear;
+                background-color: $default;
+            }
+        }
+    }
+}

@@ -1,0 +1,181 @@
+$default: #192b46;
+$active: #223c62;
+$background: #151e33;
+
+.channel__container {
+    background-color: #151e33;
+    height: calc(100vh - 70px);
+    overflow-y: scroll;
+}
+
+.channel__your_lists_header {
+    position: sticky;
+    top: 0;
+    background-color: $background;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+
+    .channel__your_list_header_button_active {
+        background-color: $active;
+    }
+
+    .channel__your_list_header_button_default {
+        background-color: $default;
+    }
+
+    .channel__your_list_header_button {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 8px;
+        padding: 0 12px;
+        border-radius: 20px;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+
+        span {
+            font-size: 12px;
+        }
+
+        cursor: pointer;
+        transition: .2s linear;
+
+        &:hover {
+            background-color: $active;
+            transition: .2s linear;
+        }
+    }
+    
+    .channel__your_lists_header_title {
+        color: #fff;
+        span {
+            margin-left: 10px;
+            display: inline-block;
+            button {
+                all: unset;
+                overflow: hidden;
+                position: relative;
+                border-radius: 50%;
+                display: flex;
+                height: 40px;
+                width: 40px;
+                cursor: pointer;
+                transition: .2s linear;
+
+                &:hover {
+                    &::after {
+                        transform: scale(100);
+                        transition: .2s linear;
+                    }
+                }
+
+                &::before {
+                    background-color: $default;
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    z-index: 1
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    z-index: 2;
+                    top: 0;
+                    right: 0;
+                    width: 1px;
+                    height: 1px;
+                    transition: .2s linear;
+                    background-color: $active;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+}
+
+.channel__your_lists_body {
+    width: 97%;
+    margin-bottom: 60px;
+
+    .lists {
+        display: flex;
+        flex-direction: column;
+
+        .list {
+            border-radius: 6px;
+            display: flex;
+            flex-direction: row;
+            margin: 7px 0;
+            align-items: center;
+            height: 50px;
+            justify-content: space-between;
+            color: #fff;
+            transition: .2s linear;
+            cursor: pointer;
+
+            &:hover {
+                transition: .2s linear;
+            }
+
+            .list_icons {
+                width: 10%;
+                text-align: center;
+            }
+
+            .list_title {
+                width: 80%;
+                font-size: 14px;
+            }
+
+            .list_next_section {
+                width: 3.5%;
+            }
+
+            .list_next_section_other {
+                width: 3.5%;
+                background-color: $default;
+                border-radius: 20px;
+                text-align: center;
+                padding-top: 6px;
+                transition: .2s linear;
+                border: 2px solid $default;
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    z-index: 4;
+                }
+                
+                &:hover {
+                    transition: .2s linear;
+                    border: 2px solid #26436e;
+                }
+            }
+        }
+    }
+}
+
+// Background Color
+.Urgent {
+    background-color: #F3487E;
+    &:hover {
+        background-color: #fe3172;
+    }
+}
+
+.Standard {
+    background-color: #192b46;
+    &:hover {
+        background-color: #223c62;
+    }
+}

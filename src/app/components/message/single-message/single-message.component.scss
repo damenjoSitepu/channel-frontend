@@ -1,0 +1,47 @@
+.success {
+    color: #65D5BD;
+
+    &::before {
+        background-color: #65d5bd2a;
+    }
+}
+
+.error {
+    color: #F3487E;
+
+    &::before {
+        background-color: rgba(255, 0, 0, 0.148);
+    }
+}
+
+.channel__form_error_message {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    margin: 15px 0;
+    font-size: 11px;
+    padding: 10px 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+    z-index: 5;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 6px;
+        z-index: -1;
+    }
+
+    img {
+        width: 15px;
+        height: 15px;
+    }
+}

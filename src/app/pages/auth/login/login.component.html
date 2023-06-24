@@ -1,0 +1,100 @@
+<div class="channel__container text-poppins">
+    <!-- Login Section -->
+    <div class="channel__login_wrapper channel__login_appear">
+        <form (keydown.enter)="login()" class="channel__login">
+            <!-- Close Button -->
+            <div (click)="backToHome(['/'])" class="channel__login_close_button">
+                <img [src]="closeImageUrl">
+            </div>
+
+            <h2 class="channel__login_title"><span>L</span>OGIN</h2>
+            <p class="channel__login_description">We need your <span>credentials</span></p>
+
+            <!-- Display The Success Message -->
+            <single-message 
+                *ngIf="successMessage?.length !== 0 && errorMessage?.length === 0"
+                [message]="successMessage"
+                [isError]="false"
+            >
+            </single-message>
+            <!-- Display The Error Message -->
+            <single-message 
+                *ngIf="errorMessage?.length !== 0"
+                [message]="errorMessage"
+                [isError]="true"
+             >
+             </single-message>
+    
+            <ng-container *ngIf="loginStep === 1">
+              <div class="channel__login_username_container channel__login_username_back">
+                <div class="channel__login_input_group">
+                  <!-- Username -->
+                    <div class="channel__form_input">
+                      <input required autocomplete="off" placeholder="" class="channel__form_type_input" id="channel__username" type="text" [(ngModel)]="username" name="channel_u"/>
+                      <label class="channel__form_label" for="channel__username">Username</label>
+                    </div>
+                    <small *ngIf="error.username && error.username.length > 0" class="channel__form_error_message" for="">
+                      {{ error.username }}
+                    </small>
+                </div>
+  
+                <!-- Login Button -->
+                <div class="channel__login_button_section">
+                  <div style="width: 75%;" class="channel__login_button_username">
+                    <small>Forgot your username?</small>
+                  </div>
+                  <div style="width: 25%">
+                    <main-button 
+                    (click)="login()"
+                    style="position: relative; z-index: 2;"
+                    [buttonName]="'Next'"
+                    [buttonWidth]="100"
+                    >
+                    </main-button>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+
+            <ng-container *ngIf="loginStep === 2">
+              <div class="channel__login_password_container channel__login_password_next">
+                <div class="channel__login_input_group">
+                  <!-- Password -->
+                  <div class="channel__form_input">
+                    <input required autocomplete="off" placeholder="" class="channel__form_type_input" id="channel__password" type="password" [(ngModel)]="password" name="channel__p"/>
+                    <label class="channel__form_label" for="channel__password">Password</label>
+                  </div>
+                  <small *ngIf="error.password && error.password.length > 0" class="channel__form_error_message" for="">
+                    {{ error.password }}
+                  </small>
+                </div>
+                <!-- Login Button -->
+                <div class="channel__login_button_section">
+                  <div style="width: 75%;">
+                    <div (click)="backToUsernameSection()" class="channel__login_button_password">
+                      <img [src]="userLoginIdentifier">
+                      <small>{{ username }}</small>
+                    </div>
+                  </div>
+                  <div style="width: 25%">
+                    <main-button 
+                    (click)="submitToLogin()"
+                    style="position: relative; z-index: 2;"
+                    [buttonName]="'Next'"
+                    [buttonWidth]="100"
+                    >
+                    </main-button>
+                  </div>
+                </div>
+
+                <div class="channel__forgot_your_password">
+                  <small>Forgot your password?</small>
+                </div>
+              </div>
+            </ng-container>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <home-footer></home-footer>
+</div>

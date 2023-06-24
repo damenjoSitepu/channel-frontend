@@ -1,0 +1,13 @@
+<!-- Footer Section -->
+<section class="channel__home_footer text-poppins">
+    <div class="channel__home_footer_wrapper">
+        <ng-container *ngIf="homeFooterMenus.length > 0">
+            <div class="channel__home_footer_link_list">
+                <small *ngFor="let homeFooterMenu of homeFooterMenus" [routerLink]="homeFooterMenu.linkRoute">{{ homeFooterMenu.linkName }}</small>
+            </div>
+        </ng-container>
+        <div class="channel__home_footer_copyright">
+            <small>.Channel Web Base Application | &copy; {{ copyright }} - Last updated {{ lastUpdate }}</small>
+        </div>
+    </div>
+</section>

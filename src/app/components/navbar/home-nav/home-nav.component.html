@@ -1,0 +1,46 @@
+<section class="channel__home_nav text-poppins">
+    <div class="channel__home_nav_wrapper">
+        <div [routerLink]="['']" class="channel__home_nav_logo">
+            <h4><span>.C</span>HANNEL</h4>
+        </div>
+    
+        <div class="channel__home_nav_navigations">
+            <div (click)="displaySidebar()" class="channel__home_nav_mobile_navigation">
+                <img [src]="menuImageUrl" alt="">
+            </div>
+            <!-- {{ activeRouteName | async }} -->
+            <!-- homeNavDesktopMenus -->
+            <div [routerLink]="['auth','login']"
+            class="channel__home_nav_navigation 
+            {{ 
+                (activeRouteName | async) === homeNavDesktopMenus.LOGIN ? 
+                'channel__home_nav_navigation_active' : 'channel__home_nav_navigation_default' 
+            }}
+            ">
+                <span>
+                     <img [src]="logoutImageUrl" alt="">
+                </span> 
+                <span>
+                     Login
+                </span>
+            </div>
+            <div [routerLink]="['auth','register']" 
+            class="channel__home_nav_navigation 
+            {{ 
+                (activeRouteName | async) === homeNavDesktopMenus.REGISTER ? 
+                'channel__home_nav_navigation_active' : 'channel__home_nav_navigation_default' 
+            }}
+            ">
+                <span>
+                     <img [src]="registrationImageUrl" alt="">
+                </span> 
+                <span>
+                     Register
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sidebar Section ( When hamburger menu was clicked, show this sidebar component as well ) -->
+<home-sidebar-nav (hideHomeSidebarNav)="hideHomeSidebarNav($event)" [showHomeSidebarNav]="showHomeSidebarNav"></home-sidebar-nav>

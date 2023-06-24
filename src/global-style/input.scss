@@ -1,0 +1,93 @@
+// Global input style
+.channel__form_input {
+    position: relative;
+    z-index: 2;
+    height: 40px;
+    margin: 10px 0;
+}
+
+.channel__form_label {
+    position: absolute;
+    left: 10px;
+    top: 7px;
+    font-size: 13px;
+    color: #fff;
+    transition: .1s linear;
+    pointer-events: none;
+
+    &::first-letter {
+        color:#3ac6e8;
+    }
+}
+
+.channel__form_type_input {
+    all: unset;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    font-size: 13px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    color: #fff;
+    border-bottom: 1px solid #3ac6e8;
+    transition: .1s linear;
+
+    &:focus ~ .channel__form_label, &:valid ~ .channel__form_label {
+        transition: .1s linear;
+        top: -10px;
+        font-size: 12px;
+        color: #3ac6e8;
+    }
+}
+
+.channel__form_active {
+    border-bottom: 1px solid #3ac6e8;
+}
+
+// Breakpoints
+@media only screen and (min-width: 350px) and (max-width: 700px) {
+    .channel__form_input {
+        position: relative;
+        z-index: 2;
+        height: 40px;
+        margin: 10px 0;
+    }
+    
+    .channel__form_label {
+        position: absolute;
+        left: 10px;
+        top: 7px;
+        font-size: 11px;
+        color: #fff;
+        transition: .1s linear;
+        pointer-events: none;
+    
+        &::first-letter {
+            color:#3ac6e8;
+        }
+    }
+    
+    .channel__form_type_input {
+        all: unset;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        font-size: 11px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        color: #fff;
+        border-bottom: 1px solid #3ac6e8;
+        transition: .1s linear;
+    
+        &:focus ~ .channel__form_label, &:valid ~ .channel__form_label {
+            transition: .1s linear;
+            top: -10px;
+            font-size: 10px;
+            color: #3ac6e8;
+        }
+    }
+    
+    .channel__form_active {
+        border-bottom: 1px solid #3ac6e8;
+    }
+}

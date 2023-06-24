@@ -1,0 +1,90 @@
+$default: #192b46;
+$active: #223c62;
+
+@keyframes openAnimation {
+    0% {
+        top: 100%;
+        left: 100%;
+        bottom: 100%;
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+@keyframes closeAnimations {
+    0% {
+        top: 0%;
+        left: 0%;
+        bottom: 0%;
+    }
+
+    100% {
+        top: 100%;
+        left: 100%;
+        bottom: 100%;
+    }
+}
+
+@keyframes openAnimationInside {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.closeAnimation {
+    animation: .2s closeAnimations linear forwards;
+}
+
+.openAnimation {
+    animation: .2s openAnimation linear forwards;
+}
+
+.openAnimationInside {
+    animation: .1s openAnimationInside .2s linear forwards;
+}
+
+.channel__modal_container {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    background-color: #151e33;
+    z-index: 100;
+}
+
+.channel__create_lists {
+    width: 96%;
+    margin: 20px auto;
+    opacity: 1;
+
+    .channel__close_button {
+        all: unset;
+        cursor: pointer;
+    }
+}
+
+.channel__create_lists_header {
+    display: flex;  
+    column-gap: 20px;
+    align-items: center;
+}
+
+.channel__create_lists_button {
+    display: flex;
+    column-gap: 10px;
+    margin: 15px 0;
+
+    main-button {
+        padding: 5px 10px;
+        box-sizing: border-box;
+    }
+}

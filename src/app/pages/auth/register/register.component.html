@@ -1,0 +1,103 @@
+<div class="channel__container text-poppins">
+    <!-- Login Section -->
+    <div class="channel__register_wrapper channel__register_appear">
+        <form autocomplete="none" (submit)="register()" class="channel__register">
+            <!-- Close Button -->
+            <div 
+            (click)="_redirectAnimationService.backTo(
+                ['auth', 'login'],
+                'channel__register_wrapper',
+                'channel__registration_disappear'
+            )" 
+            class="channel__register_close_button">
+                <img [src]="closeImageUrl">
+            </div>         
+            <h2 class="channel__register_title"><span>R</span>egister</h2>
+            <p class="channel__register_description">Create your own account to access our <span>app</span></p>
+
+            <div class="channel__register_input_group">
+                <div style="display: flex; justify-content: space-between;">
+                    <!-- First Name -->
+                    <div style="width: 48%;" class="channel__form_input">
+                        <input required autocomplete="off" placeholder="" class="channel__form_type_input" id="channel__first_name" type="text" [(ngModel)]="registerRequest.firstName" name="firstName"/>
+                        <label class="channel__form_label" for="channel__first_name">First Name</label>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div style="width: 48%;" class="channel__form_input">
+                        <input required autocomplete="off" placeholder="" class="channel__form_type_input" id="channel__last_name" type="text" [(ngModel)]="registerRequest.lastName" name="lastName"/>
+                        <label class="channel__form_label" for="channel__last_name">Last Name</label>
+                    </div>
+                </div>
+
+                <!-- Email-->
+                <div class="channel__form_input">
+                    <input required autocomplete="off" aria-autocomplete="off" placeholder="" class="channel__form_type_input" id="channel__E" [(ngModel)]="registerRequest.email" type="text" name="channelE"/>
+                    <label class="channel__form_label" for="channel__E">Email</label>
+                </div>
+
+                <div style="display: flex; justify-content: space-between;">
+                    <!-- Password -->
+                    <div style="width: 39%;" class="channel__form_input">
+                        <input required autocomplete="new-password" placeholder="" class="channel__form_type_input" id="channel__P" type="password" [(ngModel)]="registerRequest.password" name="channelP"/>
+                        <label class="channel__form_label" for="channel__P">Password</label>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div style="width: 59%;" class="channel__form_input">
+                        <input required autocomplete="off" placeholder="" class="channel__form_type_input" id="channel__password_confirmation" type="password" [(ngModel)]="registerRequest.passwordConfirmation" name="passwordConfirmation"/>
+                        <label class="channel__form_label" for="channel__password_confirmation">Password Confirmation</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agree Toggle Checkbox -->
+            <div class="channel__register_our_terms">
+                <main-toggle (output)="ChangeRegisterAgreement($event)"></main-toggle>
+                <small>You have already agreed to <span>our terms</span>. Please continue the procedure by clicking on this <span>register button</span> below</small>
+            </div>
+
+            <!-- Display The Error Message -->
+            <single-message 
+                *ngIf="errorMessage?.length !== 0"
+                [message]="errorMessage"
+                [isError]="true"
+            >
+            </single-message>
+
+            <!-- Login Button -->
+            <div 
+            [ngStyle]="{
+            opacity: (isLoading$ | async) ? '0.5' : '1',
+            pointerEvents: (isLoading$ | async) ? 'none' : 'auto'
+            }" 
+            class="channel__register_button_section"
+            >
+                <div style="width: 25%">
+                    <main-button 
+                    style="position: relative; z-index: 2;"
+                    [buttonName]="'Register'"
+                    [buttonWidth]="100"
+                    >
+                    </main-button>
+                </div>
+            </div>
+
+        </form>
+        <a class="channel__register_already_have_an_account">
+            Already have an account? 
+            <span 
+            (click)="_redirectAnimationService.backTo(
+                ['auth', 'login'],
+                'channel__register_wrapper',
+                'channel__registration_disappear'
+            )" 
+            >
+            Login now
+            </span>
+        </a>
+    </div>
+
+    <!-- Footer Section -->
+    <home-footer></home-footer>
+</div>

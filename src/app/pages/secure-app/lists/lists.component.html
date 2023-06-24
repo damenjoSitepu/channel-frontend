@@ -1,0 +1,90 @@
+<ng-container *ngIf="isLoading">
+    <lists-skeleton-main-page></lists-skeleton-main-page>
+</ng-container>
+
+<ng-container *ngIf="!isLoading">
+    <div 
+    class="channel__container channel__scoll text-poppins" 
+    >
+        <section class="channel__your_lists_header">
+            <h3 class="channel__your_lists_header_title">
+                Your Lists
+                <span (click)="openCreateLists()">
+                    <button>
+                        <channel-icons 
+                            style="
+                            margin: auto; 
+                            transform: scale(1.15) translateY(3px);
+                            position: relative;
+                            z-index: 3;
+                            " 
+                            [type]="'Create Tasks'"
+                        >
+                        </channel-icons>
+                    </button>
+                </span>
+            </h3>
+            <div 
+            (click)="filterIsUrgent()"
+            [ngClass]="isUrgent ? 'channel__your_list_header_button_active' : 'channel__your_list_header_button_default'"
+            class="channel__your_list_header_button"
+            >
+                <span>Urgent</span>
+                <channel-icons style="transform: translateY(3px);" [type]="'Hexa Sign'" [color]="'fff'" [size]="17"></channel-icons>
+            </div>
+        </section>
+    
+        <ng-container *ngIf="lists.length > 0">
+            <section class="channel__your_lists_body">
+                <div class="lists">
+                    <div [ngClass]="list.markStatus" *ngFor="let list of lists;" class="list">
+                        <!-- Icons -->
+                        <channel-icons 
+                        class="list_icons"
+                        style="
+                        margin: auto; 
+                        transform: scale(1.15) translateY(3px);
+                        position: relative;
+                        z-index: 3;
+                        " 
+                        [type]="'Web'"
+                        >
+                        </channel-icons>
+                        <!-- Title -->
+                        <p class="list_title">{{ list?.title ?? 'N/A' }}</p>
+                        <!-- Other Options -->
+                        <div 
+                        (click)="openListsOptions(list.id)" 
+                        class="list_next_section_other"
+                        >
+                            <channel-icons
+                            style="
+                            pointer-events: none;
+                            margin: auto; 
+                            transform: scale(1) translateY(1px);
+                            position: relative;
+                            z-index: 3;
+                            " 
+                            [type]="'Other'"
+                            >
+                            </channel-icons>
+                            <lists-main-option [markStatus]="list.markStatus" [listId]="list.id" (isClosed)="isMainOptionClosed($event)" *ngIf="list.showOptions"></lists-main-option>
+                        </div>
+                        <!-- Go Next Section -->
+                        <channel-icons 
+                        class="list_next_section"
+                        style="
+                        margin: auto; 
+                        transform: scale(1.15) translateY(3px);
+                        position: relative;
+                        z-index: 3;
+                        " 
+                        [type]="'Right Arrow'"
+                        >
+                        </channel-icons>
+                    </div>
+                </div>
+            </section>
+        </ng-container>
+    </div>
+</ng-container>

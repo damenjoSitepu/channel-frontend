@@ -1,0 +1,68 @@
+// Footer
+.channel__home_footer {
+    padding: 30px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: #3ac6e8;
+    font-weight: 200;
+    letter-spacing: 1px;
+    font-size: .8rem;
+
+    .channel__home_footer_wrapper {
+        width: 96%;
+        margin: auto;
+        text-align: center;
+    }
+
+    .channel__home_footer_link_list {
+        display: flex;
+        column-gap: 10px;
+        justify-content: center;
+
+        small {
+            cursor: pointer;
+        }
+    }
+
+    .channel__home_footer_copyright {
+        margin-top: 10px;
+    }
+}
+
+// Breakpoints
+
+@media only screen and (min-width: 350px) {
+    // Footer
+    .channel__home_footer {
+        padding: 30px 0;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-size: .8rem;
+
+        .channel__home_footer_wrapper {
+            width: 96%;
+            margin: auto;
+            text-align: center;
+        }
+
+        .channel__home_footer_link_list {
+            display: flex;
+            column-gap: 10px;
+            justify-content: center;
+
+            small {
+                cursor: pointer;
+            }
+        }
+
+        .channel__home_footer_copyright {
+            width: 75%;
+            margin: auto;
+            margin-top: 10px;
+        }
+    }
+}

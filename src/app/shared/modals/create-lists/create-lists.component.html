@@ -1,0 +1,58 @@
+<div class="channel__modal_container text-poppins">
+    <div class="channel__create_lists">
+        <div class="channel__create_lists_header">
+            <button class="channel__close_button" (click)="closeModal()">
+                <channel-icons 
+                    style="
+                    z-index: 3;
+                    " 
+                    [type]="'Close'"
+                    [size]="40"
+                    [color]="'3ac6e8'"
+                >
+                </channel-icons>
+            </button>
+
+            <!-- Title -->
+            <div style="width: 40%;" class="channel__form_input">
+                <input required autocomplete="off" placeholder="" class="channel__form_type_input" id="channel__first_name" type="text" [(ngModel)]="createListsRequest.title" name="title"/>
+                <label class="channel__form_label" for="channel__first_name">Add your title here</label>
+            </div>
+        </div>
+
+        <div class="channel__create_lists_button">
+            <div>
+                <main-button
+                [ngStyle]="{
+                    opacity: isLoading ? '0.5' : '1',
+                    pointerEvents: isLoading ? 'none' : 'auto'
+                }" 
+                (click)="createLists()" 
+                style="position: relative; z-index: 2;"
+                [buttonName]="'Create'"
+                [buttonWidth]="100"
+                >
+                </main-button>
+            </div>
+            <div>
+                <main-button 
+                (click)="closeModal()"
+                style="position: relative; z-index: 2;"
+                [buttonName]="'Back'"
+                [buttonWidth]="100"
+                >
+                </main-button>
+            </div>
+        </div>
+
+        <!-- Display The Error Message -->
+        <div style="width: 40%;">
+            <single-message 
+            *ngIf="errorMessage?.length !== 0"
+            [message]="errorMessage"
+            [isError]="true"
+            >
+            </single-message>
+        </div>
+    </div>
+</div>

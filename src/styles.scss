@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+// Font Configuration ( poppins )
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.text-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+// When device reach under 350px breakpoints, disable the entire apps ( doesn't support )
+@media only screen and (min-width: 0px) and (max-width: 349px) {
+    html, body {
+        display: none;
+    }   
+}
+// Disable Global Scrolling
+html, body {
+    overflow: hidden;
+}

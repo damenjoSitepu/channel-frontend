@@ -1,0 +1,1 @@
+export const REGISTER_STATE_NAME = 'register';

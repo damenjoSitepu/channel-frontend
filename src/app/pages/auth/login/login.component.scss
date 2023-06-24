@@ -1,0 +1,549 @@
+.channel__container {
+    background-color: #151e33;
+    height: calc(100vh - 70px);
+}
+
+// Login Animation
+@keyframes appear {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes disappear {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+.channel__login_appear {
+    animation: .15s appear linear forwards;
+}
+
+.channel__login_disappear {
+    animation: .15s disappear linear forwards;
+}   
+
+// Login page
+.channel__login_wrapper {
+    width: 25%;
+    margin: auto;
+    padding-top: 20px;
+    transform: scale(0);
+}
+
+.channel__login {
+    position: relative;
+    padding: 25px 20px 35px 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    .channel__login_close_button {
+        position: absolute;
+        top: 13px;
+        right: 10px;
+        z-index: 3;
+        cursor: pointer;
+
+        img {
+            width: 25px;
+            height: 25px;
+        }
+    }
+
+    &::before {
+        border-radius: 6px;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        backdrop-filter: blur(4px);
+        background-color: #192b46;
+        z-index: 1;
+    }
+
+    .channel__login_title {
+        position: relative;
+        z-index: 2;
+        letter-spacing: 2px;
+        color: #fff;
+        text-align: center;
+        span {
+            color: #3ac6e8;
+        }
+    }
+
+    .channel__login_description {
+        position: relative;
+        z-index: 2;
+        color: #fff;
+        margin: 10px 0;
+        box-sizing: border-box;
+        font-size: .9rem;
+        text-align: center;
+        span {
+            color: #3ac6e8;
+        }
+    }
+
+    .channel__login_input_group {
+        width: 100%;
+        margin: auto;
+        padding: 10px 0;
+    }
+}
+
+.channel__login_button_password {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  transition: .25s linear;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 7px;
+  border-radius: 6px;
+  width: fit-content;
+
+  &:hover {
+    transition: .25s linear;
+    background-color: #223c62;
+  }
+
+  img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.channel__login_button_section {
+  position: relative; 
+  z-index: 2; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+
+  .channel__login_button_username {
+    small {
+      transition: .25s linear;
+      color: #fff;
+      font-size: 12px;
+      cursor: pointer;
+      padding: 4px 7px;
+      border-radius: 6px;
+  
+      &:hover {
+        transition: .25s linear;
+        background-color: #223c62;
+      }
+    }
+  }
+}
+
+.channel__forgot_your_password {
+  margin-top: 10px;
+
+  small {
+    font-size: 12px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    padding: 4px 7px;
+    border-radius: 6px;
+    transition: .25s linear;
+    color: #3ac6e8;
+
+    &:hover {
+      transition: .25s linear;
+      background-color: #223c62;
+    }
+  }
+}
+
+// Breakpoints
+@media only screen and (min-width: 350px) and (max-width: 699px) {
+    // Login page
+    .channel__login_wrapper {
+        width: 86%;
+        margin: auto;
+        padding-top: 20px;
+  
+        transform: scale(0);
+    }
+
+    .channel__login {
+        position: relative;
+        padding: 25px 20px 35px 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        .channel__login_close_button {
+            position: absolute;
+            top: 13px;
+            right: 10px;
+            z-index: 3;
+            cursor: pointer;
+
+            img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        &::before {
+            border-radius: 6px;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            backdrop-filter: blur(4px);
+            background-color: #192b46;
+            z-index: 1;
+        }
+
+        .channel__login_title {
+            position: relative;
+            z-index: 2;
+            letter-spacing: 2px;
+            color: #fff;
+            font-size: 1rem;
+            span {
+                color: #3ac6e8;
+            }
+        }
+
+        .channel__login_description {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            margin: 10px 0;
+            box-sizing: border-box;
+            font-size: .8rem;
+            span {
+                color: #3ac6e8;
+            }
+        }
+
+        .channel__login_input_group {
+            width: 100%;
+            margin: auto;
+        }
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    // Login page
+    .channel__login_wrapper {
+        width: 50%;
+        margin: auto;
+        padding-top: 20px;
+  
+        transform: scale(0);
+    }
+
+    .channel__login {
+        position: relative;
+        padding: 25px 20px 35px 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        .channel__login_close_button {
+            position: absolute;
+            top: 13px;
+            right: 10px;
+            z-index: 3;
+            cursor: pointer;
+
+            img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        &::before {
+            border-radius: 6px;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            backdrop-filter: blur(4px);
+            background-color: #192b46;
+            z-index: 1;
+        }
+
+        .channel__login_title {
+            position: relative;
+            z-index: 2;
+            letter-spacing: 2px;
+            color: #fff;
+            span {
+                color: #3ac6e8;
+            }
+        }
+
+        .channel__login_description {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            margin: 10px 0;
+            box-sizing: border-box;
+            font-size: .8rem;
+            span {
+                color: #3ac6e8;
+            }
+        }
+
+        .channel__login_input_group {
+            width: 100%;
+            margin: auto;
+        }
+    }
+}
+
+@media only screen and (min-width: 950px) {
+    // Login page
+    .channel__login_wrapper {
+        width: 35%;
+        margin: auto;
+        padding-top: 20px;
+  
+        transform: scale(0);
+    }
+
+    .channel__login {
+        position: relative;
+        padding: 25px 20px 35px 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        .channel__login_close_button {
+            position: absolute;
+            top: 13px;
+            right: 10px;
+            z-index: 3;
+            cursor: pointer;
+
+            img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        &::before {
+            border-radius: 6px;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            backdrop-filter: blur(4px);
+            background-color: #192b46;
+            z-index: 1;
+        }
+
+        .channel__login_title {
+            position: relative;
+            z-index: 2;
+            letter-spacing: 2px;
+            color: #fff;
+            span {
+                color: #3ac6e8;
+            }
+        }
+
+        .channel__login_description {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            margin: 10px 0;
+            box-sizing: border-box;
+            font-size: .9rem;
+            span {
+                color: #3ac6e8;
+            }
+        }
+
+        .channel__login_input_group {
+            width: 100%;
+            margin: auto;
+        }
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    // Login page
+    .channel__login_wrapper {
+        width: 450px;
+        margin: auto;
+        padding-top: 20px;
+  
+        transform: scale(0);
+    }
+
+    .channel__login {
+        position: relative;
+        padding: 25px 20px 35px 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+
+        .channel__login_close_button {
+            position: absolute;
+            top: 13px;
+            right: 10px;
+            z-index: 3;
+            cursor: pointer;
+
+            img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        &::before {
+            border-radius: 6px;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            backdrop-filter: blur(4px);
+            background-color: #192b46;
+            z-index: 1;
+        }
+
+        .channel__login_title {
+            position: relative;
+            z-index: 2;
+            letter-spacing: 2px;
+            color: #fff;
+            span {
+                color: #3ac6e8;
+            }
+        }
+
+        .channel__login_description {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            margin: 10px 0;
+            box-sizing: border-box;
+            font-size: .9rem;
+            span {
+                color: #3ac6e8;
+            }
+        }
+
+        .channel__login_input_group {
+            width: 100%;
+            margin: auto;
+        }
+    }
+}
+
+// Handle error animation
+@keyframes channelErrorFormBackgroundAnimation {
+  0% {
+    background-color: #192b46;
+  }
+
+  50% {
+    background-color: #F3487E;
+  }
+
+  100% {
+    background-color: transparent;
+    visibility: hidden;
+  }
+}
+
+.channel__invalid_animation {
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: .25s channelErrorFormBackgroundAnimation linear forwards;
+    background-color: #192b46;
+    z-index: 10;
+    opacity: .2;
+    overflow: hidden;
+    border-radius: 6px;
+  }
+}
+
+// Username
+@keyframes channelLoginUsernameBack {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 0%;
+  }
+}
+.channel__login_username_back {
+  position: relative;
+  right: -100%;
+  animation: .25s channelLoginUsernameBack linear forwards;
+}
+
+@keyframes channelLoginUsernameNext {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
+.channel__login_username_next {
+  position: relative;
+  left: 0;
+  animation: .25s channelLoginUsernameNext linear forwards;
+}
+
+// Password
+@keyframes channelLoginPasswordBack {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -100%;
+  }
+}
+.channel__login_password_back {
+  position: relative;
+  right: -100%;
+  animation: .25s channelLoginPasswordBack linear forwards;
+}
+
+@keyframes channelLoginPasswordNext {
+  0% {
+    right: -100%;
+  }
+  100% {
+    right: 0%;
+  }
+}
+.channel__login_password_next {
+  position: relative;
+  right: -100%;
+  animation: .25s channelLoginPasswordNext linear forwards;
+}
+

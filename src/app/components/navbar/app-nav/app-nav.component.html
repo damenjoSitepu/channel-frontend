@@ -1,0 +1,42 @@
+<section class="channel__home_nav text-poppins">
+    <div class="channel__home_nav_wrapper">
+        <div [routerLink]="['secure-app']" class="channel__home_nav_logo">
+            <h4><span>.C</span>HANNEL</h4>
+        </div>
+        <div class="channel__home_nav_main_navigations">
+            <div  class="channel__home_nav_main_navigations_item nav_active">
+                <channel-icons style="transform: translateY(5px); display: block;" [color]="'fff'" [type]="'Home'" [size]="20"></channel-icons>
+            </div>
+            <div class="channel__home_nav_main_navigations_item">
+                <channel-icons style="transform: translateY(5px); display: block;" [color]="'fff'" [type]="'Friends'" [size]="30"></channel-icons>
+            </div>
+            <div class="channel__home_nav_main_navigations_item">
+                <channel-icons style="transform: translateY(5px); display: block;" [color]="'fff'" [type]="'Clock'" [size]="20"></channel-icons>
+            </div>
+        </div>
+        <div class="channel__home_nav_navigations">
+            <div (click)="displaySidebar()" class="channel__home_nav_mobile_navigation">
+                <img [src]="menuImageUrl" alt="">
+            </div>
+
+            <!-- homeNavDesktopMenus -->
+            <div class="channel__home_nav_navigation_extra">
+                <channel-icons style="margin: auto; transform: translateY(4px);" [type]="'Setting'" [size]="20"></channel-icons>
+            </div>
+            <div 
+            (click)="onLogout($event)"
+            class="channel__home_nav_navigation channel__home_nav_navigation_default"
+            >
+                <span>
+                     <img [src]="logoutImageUrl" alt="">
+                </span> 
+                <span>
+                     Logout
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sidebar Section ( When hamburger menu was clicked, show this sidebar component as well ) -->
+<app-sidebar-nav (hideHomeSidebarNav)="hideHomeSidebarNav($event)" [showHomeSidebarNav]="showHomeSidebarNav"></app-sidebar-nav>

@@ -1,0 +1,187 @@
+$default: #192b46;
+$active: #223c62;
+
+.channel__home_nav {
+    position: relative;
+    width: 100%;
+    background-color: #151e33;
+    height: 50px;
+    padding-top: 20px;
+
+    .channel__home_nav_logo {
+        cursor: pointer;
+
+        h4 {
+            color: #fff;
+            letter-spacing: 3px;
+        }
+
+        span {
+            color: #3ac6e8;
+        }
+    }
+
+    .channel__home_nav_navigations {
+        display: flex;
+        column-gap: 10px;
+    }
+
+    .channel__home_nav_navigation_extra {
+        background-color: $default;
+        width: 40px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        cursor: pointer;
+        transition: .2s linear;
+        &:hover {
+            transition: .2s linear;
+            background-color: $active;
+        }
+    }
+
+    .channel__home_nav_mobile_navigation {
+        display: none;
+    }
+
+    .channel__home_nav_navigation_default {
+        background-color: #192b46;
+    }
+
+    .channel__home_nav_navigation_active {
+        background-color: #223c62;
+    }
+
+    .channel__home_nav_main_navigations {
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        justify-content: space-between;
+        
+        .channel__home_nav_main_navigations_item {
+            width: 25%;
+            text-align: center;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: .2s linear;
+            &:hover {
+                background-color: $active;
+                transition: .2s linear;
+            }
+        }
+
+        .nav_active {
+            background-color: $default;
+        }
+    }
+    
+    .channel__home_nav_navigation {
+        display: flex;
+        align-items: center;
+        column-gap: 5px;
+        color: #fff;
+        padding: 0 15px;
+        box-sizing: border-box;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: .2s linear;
+        font-size: .8rem;
+
+        &:hover {
+            transition: .2s linear;
+            background-color: #223c62;
+        }
+
+        span {
+            display: flex;
+            img {
+                display: block;
+                margin: auto;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    .channel__home_nav_wrapper {
+        width: 96%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        line-height: 40px;
+        justify-content: space-between;
+    }
+}
+
+// Breakpoints
+@media only screen and (min-width: 350px) and (max-width: 700px) {
+    .channel__home_nav {
+        width: calc(100% - 40px);
+        height: 50px;
+        padding: 0 20px;
+        padding-top: 20px;
+    
+        .channel__home_nav_logo {
+            cursor: pointer;
+    
+            h4 {
+                color: #fff;
+                letter-spacing: 3px;
+            }
+    
+            span {
+                color: #3ac6e8;
+            }
+        }
+    
+        .channel__home_nav_mobile_navigation {
+            display: flex;
+            cursor: pointer;
+
+            img {
+                margin: auto;
+                display: block;
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        .channel__home_nav_navigation {
+            display: none;
+            align-items: center;
+            column-gap: 5px;
+            color: #fff;
+            background-color: #192b46;
+            padding: 0px 15px;
+            box-sizing: border-box;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: .2s linear;
+            font-size: .8rem;
+    
+            &:hover {
+                transition: .2s linear;
+                background-color: #223c62;
+            }
+    
+            span {
+                display: flex;
+                img {
+                    display: block;
+                    margin: auto;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    
+        .channel__home_nav_wrapper {
+            width: 96%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            line-height: 40px;
+            justify-content: space-between;
+        }
+    }
+}

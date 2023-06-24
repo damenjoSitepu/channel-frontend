@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <title>Frontend</title>
+        <base href="/">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+    </head>
+    <style>
+        #channel__splash_screen{position:fixed;top:0;left:0;right:0;bottom:0;z-index:10000;background-color:#151e33;}.lds-dual-ring {display:inline-block;}.lds-dual-ring:after{content:"";display:block;width:64px;height:64px;margin:8px;border-radius:50%;border:6px solid#3ac6e8;border-color:#3ac6e8 transparent#3ac6e8 transparent;animation:lds-dual-ring 1.2s linear infinite;}@keyframes lds-dual-ring{0%{transform:rotate(0deg);opacity:1;}50%{opacity:.5;}100%{opacity:1;transform:rotate(360deg);}}.lds-ring{display:block;position:relative;width:50px;height:50px;transform:translate(15px,-40px);}.lds-ring div {box-sizing: border-box;display:block;position:absolute;width:64px;height:64px;border:8px solid#3ac6e8;border-radius:50%;animation: lds-ring 1.2s cubic-bezier(0.5,0,0.5,1)infinite;border-color:#3ac6e8 transparent transparent transparent;}.lds-ring div:nth-child(1){animation-delay:-0.45s;}.lds-ring div:nth-child(2){animation-delay:-0.3s;}.lds-ring div:nth-child(3) {animation-delay:-0.15s;}@keyframes lds-ring{0%{transform:rotate(0deg);opacity:.5;}50%{opacity:1;}100%{transform:rotate(360deg);opacity:.5;}}#channel__splash_screen{display:flex;transform:translateY(-20px);}.channel__splash_screen{margin:auto;text-align:center;position:relative;}.channel__splash_screen h1 {position:absolute;color:#fff;bottom:0;transform:translateY(35px)translateX(-15px);font-size:25px;}@keyframes channel__title_animation{0%{opacity:1;}50%{opacity:.6;}100%{opacity:1;}}.channel__title_animation{animation:1s channel__title_animation linear infinite;}
+    </style>
+    <body style="background-color: #151e33;">
+        <!-- Load Splash Screen Until All Assets Loaded -->
+        <div id="channel__splash_screen">
+            <div  class="channel__splash_screen text-poppins">
+                <div class="lds-dual-ring"></div>
+                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                <h1 class="channel__title_animation"><span style="color: #3ac6e8;">.C</span>hannel</h1>
+            </div>
+        </div>
+        <app-root></app-root>
+        <script>
+            window.addEventListener("load", function(event) {
+                const channelSplashScreen = document.getElementById('channel__splash_screen');
+                channelSplashScreen.remove();
+            });
+        </script>
+    </body>
+</html>

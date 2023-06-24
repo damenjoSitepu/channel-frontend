@@ -1,0 +1,67 @@
+<ng-container *ngIf="showHomeSidebarNav">
+    <section class="channel__home_sidebar_nav text-poppins">
+        <div class="channel__home_sidebar_nav_container channel__home_sidebar_nav_start_animation">
+            <!-- Main Title -->
+            <div class="channel__home_sidebar_nav_first">
+                <div (click)="closeSidebar(['/'])" class="channel__home_sidebar_nav_logo">
+                    <h4><span>.C</span>HANNEL</h4>
+                </div>
+    
+                <div (click)="closeSidebar()" class="channel__home_sidebar_nav_back_navigation">
+                    <img [src]="closeImageUrl" alt="">
+                </div>
+            </div>
+    
+            <div class="channel_home_sidebar_nav_line"></div>
+    
+            <!-- Accesories -->
+            <div class="channel_home_sidebar_nav_header">
+                <div class="channel_home_sidebar_nav_left">
+                    <div class="channel_home_sidebar_nav_left_square">
+                        <span>.C</span>
+                    </div>
+                </div>
+                <div class="channel_home_sidebar_nav_right">
+                    <p>Work Management Web App</p>
+                    <small>Version <span>1.0.0</span></small>
+                </div>
+            </div>
+    
+            <!-- Core Menu -->
+            <div class="channel__home_sidebar_nav_links">
+                <p class="channel__home_sidebar_nav_links_title"><span>C</span>ore</p>
+                <div (click)="closeSidebar(['auth','login'])" 
+                class="
+                channel__home_sidebar_nav_link
+                {{ 
+                    (activeRouteName | async) === homeNavDesktopMenus.LOGIN ? 
+                    'channel__home_sidebar_nav_link_active' : ''
+                }}
+                ">
+                    <p>Login</p>
+                    <div class="channel_home_sidebar_nav_link_image_wrapper">
+                        <img [src]="logoutImageUrl" alt="">
+                    </div>
+                </div>
+    
+                <div (click)="closeSidebar(['auth','register'])" 
+                class="
+                channel__home_sidebar_nav_link
+                {{ 
+                    (activeRouteName | async) === homeNavDesktopMenus.REGISTER ? 
+                    'channel__home_sidebar_nav_link_active' : ''
+                }}
+                ">
+                    <p>Register</p>
+                    <div class="channel_home_sidebar_nav_link_image_wrapper">
+                        <img [src]="registrationImageUrl" alt="">
+                    </div>
+                </div>
+            </div>
+    
+            <div class="channel__home_footer_copyright">
+                <small>.Channel Web Base Application | &copy; 2023</small>
+            </div>
+        </div>
+    </section>
+</ng-container>

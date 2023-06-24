@@ -1,0 +1,27 @@
+<!-- Loader -->
+<top-loader *ngIf="isLoading"></top-loader>
+
+<!-- Channel Placeholder -->
+<ng-template channelPlaceholder></ng-template>
+
+<!-- Base App -->
+<ng-container *ngIf="!isLoadAppNav">
+    <home-nav></home-nav>
+    <router-outlet></router-outlet>
+</ng-container>
+<ng-container *ngIf="isLoadAppNav">
+    <app-nav></app-nav>
+    <div style="display: flex; column-gap: 20px;">
+        <div style="width: 20%">
+            <main-sidebar></main-sidebar>
+        </div>
+        <div style="width: 80%;">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</ng-container>
+
+
+
+
+
