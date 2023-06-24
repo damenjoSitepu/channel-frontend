@@ -9,6 +9,7 @@ import { getLoading } from 'src/app/shared/state/shared.selector';
 import { ModalService } from 'src/app/services/modal.service';
 import { CreateListsComponent } from 'src/app/shared/modals/create-lists/create-lists.component';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActiveNavService } from 'src/app/services/active-nav.service';
 
 @Component({
   selector: 'app-lists',
@@ -34,11 +35,13 @@ export class ListsComponent implements OnInit, OnDestroy {
         private _subscriptionService: SubscriptionService,
         private _modalService: ModalService,
         private _activatedRoute: ActivatedRoute,
-        private _router: Router
+        private _router: Router,
+        private _activeNavService: ActiveNavService
     ) { }
 
     ngOnInit(): void {
         this.setup();
+        this._activeNavService.setMain('your-lists');
     }
 
     ngOnDestroy(): void {

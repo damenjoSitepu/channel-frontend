@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store";
 import { sharedInitialState } from "./shared.state";
-import { setErrorMessage, setIsLoggedIn, setLoading, setSuccessMessage, setTopLoading, setUser } from "./shared.actions";
+import { setActiveMainSidebar, setErrorMessage, setIsLoggedIn, setLoading, setSuccessMessage, setTopLoading, setUser } from "./shared.actions";
 
 const _sharedReducer = createReducer(
     sharedInitialState,
@@ -20,25 +20,31 @@ const _sharedReducer = createReducer(
         return {
             ...state,
             errorMessage: action.errorMessage
-        }
+        };
     }),
     on(setSuccessMessage, (state, action) => {
         return {
             ...state,
             successMessage: action.successMessage
-        }
+        };
     }),
     on(setIsLoggedIn, (state, action) => {
         return {
             ...state,
             isLoggedIn: action.isLoggedIn
-        }
+        };
     }),
     on(setUser, (state, action) => {
         return {
             ...state,
             user: action.user
-        }
+        };
+    }),
+    on(setActiveMainSidebar, (state, action) => {
+        return {
+            ...state,
+            activeMainSidebar: action.activePath
+        };
     })
 );
 

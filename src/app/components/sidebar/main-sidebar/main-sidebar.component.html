@@ -1,19 +1,19 @@
 <div class="channel__main_sidebar text-poppins">
     <div class="channel__main_sidebar_wrapper">
         <div class="channel__main_sidebar_lists">
-            <a [routerLink]="['secure-app']" class="channel__main_sidebar_list">
+            <a [routerLink]="['secure-app']" [ngClass]="pathName === 'home' ? 'channel__main_sidebar_list_active' : ''" class="channel__main_sidebar_list">
                 <span style="background-image: linear-gradient(#4E65FF,#92EFFD);">
                     <i-home class="channel__main_sidebar_list_icon" [size]="18"></i-home>
                 </span>
                 <span>Home</span>
             </a>
-            <a [routerLink]="['secure-app','your-lists']" class="channel__main_sidebar_list">
+            <a [routerLink]="['secure-app','your-lists']" [ngClass]="pathName === 'your-lists' ? 'channel__main_sidebar_list_active' : ''" class="channel__main_sidebar_list">
                 <span style="background-image: linear-gradient(#D4145A,#FBB03B);">
                     <i-tasks class="channel__main_sidebar_list_icon" [size]="18"></i-tasks>
                 </span>
                 <span>Your List</span>
             </a>
-            <a [routerLink]="['secure-app','manage-list-status']" class="channel__main_sidebar_list">
+            <a [routerLink]="['secure-app','manage-list-status']" [ngClass]="pathName === 'manage-list-status' ? 'channel__main_sidebar_list_active' : ''" class="channel__main_sidebar_list">
                 <span style="background: rgb(2,0,36);
                 background: rgb(112,103,255); background-image: linear-gradient(#40c9ff,#e81cff);">
                     <channel-icons style="transform: translateY(2px);" class="channel__main_sidebar_list_icon" [type]="'Status'" [color]="'fff'" [size]="18"></channel-icons>

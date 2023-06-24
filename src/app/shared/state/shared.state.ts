@@ -1,6 +1,7 @@
 import { LoginCrucialData } from "src/app/pages/auth/login/login.interface";
 
 export interface SharedState {
+    activeMainSidebar: string;
     isLoading: boolean;
     isTopLoading: boolean;
     errorMessage: string;
@@ -10,6 +11,7 @@ export interface SharedState {
 }
 
 export const sharedInitialState: SharedState = {
+    activeMainSidebar: 'home',
     isLoading: false,
     isTopLoading: false,
     errorMessage: '',

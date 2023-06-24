@@ -28,3 +28,7 @@ export const getUser = createSelector(getSharedState, state => {
 export const getTopLoading = createSelector(getSharedState, state => {
     return state.isTopLoading;
 })
+
+export const getActiveMainSidebar = createSelector(getSharedState, state => {
+    return state.activeMainSidebar;
+});

@@ -7,6 +7,7 @@ export const SET_ERROR_MESSAGE = '[Shared State] - Set Error Message';
 export const SET_SUCCESS_MESSAGE = '[Shared State] - Set Success Message';
 export const SET_IS_LOGGED_IN = '[Shared State] - Set Is Logged In Or Not';
 export const SET_USER = '[Shared State] - Set User';
+export const SET_ACTIVE_MAIN_SIDEBAR = '[Shared State] - Set Active Main Sidebar';
 
 export const setLoading = createAction(
     SET_LOADING,
@@ -36,4 +37,9 @@ export const setIsLoggedIn = createAction(
 export const setUser = createAction(
     SET_USER,
     props<{ user: LoginCrucialData | null }>()
+);
+
+export const setActiveMainSidebar = createAction(
+    SET_ACTIVE_MAIN_SIDEBAR,
+    props<{ activePath: string }>()
 );
