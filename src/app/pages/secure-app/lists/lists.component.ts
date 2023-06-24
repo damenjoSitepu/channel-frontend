@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { filterUrgentStatusLists, getLists } from './state/lists.actions';
+import { getLists } from './state/lists.actions';
 import { Subscription } from 'rxjs';
 import { Lists } from './contracts/entity/lists.contract';
 import { fetchLists, isUrgentFilterLists } from './state/lists.selector';
@@ -27,11 +27,6 @@ export class ListsComponent implements OnInit, OnDestroy {
         this.lists = data;
     });
 
-    private _isUrgentSubscription$: Subscription = this._store.select(isUrgentFilterLists).subscribe((data: boolean | undefined) => {
-        // if (data !== undefined) {
-        //     this._store.dispatch(getLists({ isUrgent: data }));
-        // }
-    });
     protected isUrgent!: boolean;
 
     constructor(
@@ -50,13 +45,12 @@ export class ListsComponent implements OnInit, OnDestroy {
         this._subscriptionService.delete(
             this._listsSubscription$,
             this._isLoadingSubscription$,
-            this._isUrgentSubscription$
         );
     }
 
     private setup(): void {
         this._activatedRoute.queryParams.subscribe((params: Params) => {
-            this.isUrgent = JSON.parse(params['isUrgent']);
+            this.isUrgent = JSON.parse(params['isUrgent'] ?? false);
             this._store.dispatch(getLists({ isUrgent: params['isUrgent'] }));
         })
     }
