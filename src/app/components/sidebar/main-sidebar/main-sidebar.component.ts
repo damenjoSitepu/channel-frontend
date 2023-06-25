@@ -13,7 +13,7 @@ export class MainSidebarComponent implements OnDestroy {
     private _getActiveMainSidebarSubscription$: Subscription = this._store.select(getActiveMainSidebar).subscribe((data: string) => {
         this.pathName = data;
     });
-    protected pathName: string = 'home';
+    protected pathName: string = '';
 
     constructor(
         private _subscriptionService: SubscriptionService,

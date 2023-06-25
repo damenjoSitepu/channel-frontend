@@ -11,7 +11,7 @@ export interface SharedState {
 }
 
 export const sharedInitialState: SharedState = {
-    activeMainSidebar: 'home',
+    activeMainSidebar: '',
     isLoading: false,
     isTopLoading: false,
     errorMessage: '',
