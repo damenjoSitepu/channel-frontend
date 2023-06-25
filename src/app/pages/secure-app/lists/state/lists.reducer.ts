@@ -13,7 +13,7 @@ const _listsReducer = createReducer(
         };
     }),
     on(createListsSuccess, (state, action) => {
-        const listData = [...state.data, (new ListsModel([action.data.data.creationInformation.list] ?? [])).get()[0]];
+        const listData = [(new ListsModel([action.data.data.creationInformation.list] ?? [])).get()[0], ...state.data];
         return {
             ...state,
             data: listData

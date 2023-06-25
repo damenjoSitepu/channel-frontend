@@ -1,1 +1,23 @@
-<p>list-status works!</p>
+<div 
+class="channel__container channel__scoll text-poppins" 
+>
+    <section class="channel__manage_list_status_header">
+        <h3 class="channel__manage_list_status_header_title">
+            Manage List Status
+        </h3>
+        <div (click)="openListStatusOperationsOptions()" class="channel__manage_list_status_button list_next_section_other">
+            <channel-icons
+            style="
+            pointer-events: none;
+            margin: auto; 
+            transform: scale(1) translateY(3px);
+            position: relative;
+            z-index: 3;
+            " 
+            [type]="'Other'"
+            >
+            </channel-icons>
+            <list-status-main-option *ngIf="showOperations" (isClosed)="isMainOperationsOptionClosed($event)"></list-status-main-option>
+        </div>
+    </section>
+</div>

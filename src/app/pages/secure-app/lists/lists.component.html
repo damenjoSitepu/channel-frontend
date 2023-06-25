@@ -52,6 +52,8 @@
                         </channel-icons>
                         <!-- Title -->
                         <p class="list_title">{{ list?.title ?? 'N/A' }}</p>
+                        <!-- Mark Sttus -->
+                        <p class="list_mark_status">{{ list?.markStatus ?? 'N/A' }}</p>
                         <!-- Other Options -->
                         <div 
                         (click)="openListsOptions(list.id)" 

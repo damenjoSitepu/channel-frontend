@@ -1,0 +1,37 @@
+$default: #192b46;
+$active: #223c62;
+$background: #151e33;
+
+.channel__container {
+    background-color: #151e33;
+    height: calc(100vh - 70px);
+    overflow-y: scroll;
+}
+
+.channel__manage_list_status_header {
+    position: sticky;
+    top: 0;
+    background-color: $background;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 10px;
+    color: #fff;
+
+    .channel__manage_list_status_button {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        background-color: $default;
+        border-radius: 50%;
+        display: flex;
+        transition: .2s linear;
+        cursor: pointer;
+        &:hover {
+            background-color: $active;
+        }
+    }
+}
