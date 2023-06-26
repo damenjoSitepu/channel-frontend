@@ -5,13 +5,13 @@ $active: #223c62;
 :host {
     position: absolute;
     z-index: 6;
-    bottom: -50px;
+    bottom: -80px;
     left: -0px;
     width: 150px;
     padding: 8px 0px;
     box-sizing: border-box;
     background-color: $default;
-    border-radius: 20px;
+    border-radius: 6px;
     overflow: hidden;
 }
 
