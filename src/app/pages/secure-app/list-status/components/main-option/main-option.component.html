@@ -1,8 +1,8 @@
 <div (clickOutside)="clickOutsideOperationsOptions($event)" [excludeBeforeClick]="true" [exclude]="'list_next_section_other'" class="channel__your_list_option">
     <div class="channel__your_list_option_container">
-        <div (click)="createListStatus()" class="channel__your_list_option_list">
-            <channel-icons style="transform: translateY(2px)" [size]="15" [color]="'fff'" [type]="'Add'"></channel-icons>
-            <p>Create</p>
+        <div (click)="createListStatus()" class="channel__your_list_option_list channel__list_status_main_options_create">
+            <channel-icons style="transform: translateY(2px); pointer-events: none;" [size]="15" [color]="'fff'" [type]="'Add'"></channel-icons>
+            <p style="pointer-events: none;">Create</p>
         </div>
     </div>
     <div class="channel__your_list_option_container">

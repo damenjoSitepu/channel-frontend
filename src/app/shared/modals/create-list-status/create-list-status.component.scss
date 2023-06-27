@@ -59,9 +59,13 @@ $active: #223c62;
     bottom: 0%;
     background-color: transparent;
     z-index: 100;
+    pointer-events: none;
 }
 
 .channel__create_list_status {
+    position: fixed;
+    left: 35%;
+    right: 35%;
     width: 30%;
     margin: 15% auto;
     opacity: 1;
