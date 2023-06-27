@@ -14,5 +14,7 @@ export const ICONS: any = {
     CLOCK: 'Clock',
     HEXA_SIGN: 'Hexa Sign',
     STATUS: 'Status',
-    ADD: 'Add'
+    ADD: 'Add',
+    MOVE: 'Move',
+    SIMPLE_CLOSE: 'Simple Close'
 };

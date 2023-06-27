@@ -1,4 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { ModalService } from 'src/app/services/modal.service';
+import { CreateListStatusComponent } from 'src/app/shared/modals/create-list-status/create-list-status.component';
 
 @Component({
   selector: 'list-status-main-option',
@@ -7,6 +9,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class MainOptionComponent {
     @Output() isClosed: EventEmitter<boolean> = new EventEmitter<boolean>(false);
+
+    constructor(
+        private _modalService: ModalService
+    ) {}
 
 
     clickOutsideOperationsOptions(e: Event): void {
@@ -17,6 +23,8 @@ export class MainOptionComponent {
     }
 
     createListStatus(): void {
-
+        this._modalService.create({
+            component: CreateListStatusComponent
+        });
     }
 }

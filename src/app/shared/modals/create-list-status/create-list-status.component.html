@@ -1,0 +1,42 @@
+<div class="channel__modal_container text-poppins">
+    <div class="channel__create_list_status" cdkDrag>
+        <div class="channel__create_lists_status_move_handler">
+            <p>List Status</p>
+            <channel-icons 
+            cdkDragHandle
+            style="
+            z-index: 3;
+            " 
+            [type]="'Move'"
+            [size]="18"
+            [color]="'3ac6e8'"
+            >
+            </channel-icons>
+        </div>
+
+        <div class="channel__create_list_status_body">
+            <form class="channel__create_list_status_body_input">
+                <!-- Name Of Status -->
+                <div style="width: 100%;" class="channel__form_input">
+                    <input required autocomplete="off" placeholder="" class="channel__form_type_input" id="channel__title" type="text" name="title"/>
+                    <label class="channel__form_label" for="channel__title">Named As</label>
+                </div>
+                <!-- Description -->
+                <div style="width: 100%;" class="channel__form_text">
+                    <textarea autocomplete="off" placeholder="" class="channel__form_type_text text-poppins" id="channel__list_status_description" (focus)="openLabel('channel__list_status_description_label')" (blur)="closeLabel('channel__list_status_description','channel__list_status_description_label')" (input)="persistLabel('channel__list_status_description','channel__list_status_description_label')" (input)="resizeTextArea('channel__list_status_description')"  name="title"></textarea>
+                    <label id="channel__list_status_description_label" class="channel__form_label" for="channel__list_status_description">Description</label>
+                </div>
+            </form>
+
+
+            <div style="margin-bottom: 20px;" class="channel__create_list_status_footer">
+                <main-button
+                style="position: relative; z-index: 2;"
+                [buttonName]="'Done'"
+                [buttonWidth]="40"
+                >
+                </main-button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,121 @@
+$default: #192b46;
+$active: #223c62;
+
+@keyframes openAnimation {
+    0% {
+        top: 100%;
+        left: 100%;
+        bottom: 100%;
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+@keyframes closeAnimations {
+    0% {
+        top: 0%;
+        left: 0%;
+        bottom: 0%;
+    }
+
+    100% {
+        top: 100%;
+        left: 100%;
+        bottom: 100%;
+    }
+}
+
+@keyframes openAnimationInside {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.closeAnimation {
+    animation: .2s closeAnimations linear forwards;
+}
+
+.openAnimation {
+    animation: .2s openAnimation linear forwards;
+}
+
+.openAnimationInside {
+    animation: .1s openAnimationInside .2s linear forwards;
+}
+
+.channel__modal_container {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    background-color: transparent;
+    z-index: 100;
+}
+
+.channel__create_list_status {
+    width: 30%;
+    margin: 15% auto;
+    opacity: 1;
+    background-color: $default;
+    border-radius: 6px;
+    // padding: 20px;
+    border: 1px solid $active;
+
+    .channel__create_lists_status_move_handler {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px dashed $active;
+        padding: 10px 20px 5px;
+        column-gap: 6px;
+        box-sizing: border-box;
+
+        p {color: #fff;}
+        channel-icons {
+            cursor: pointer;
+        }
+    }
+
+    .channel__create_list_status_body {
+        padding: 10px 20px;
+        box-sizing: border-box;
+
+        .channel__create_list_status_body_input {
+            margin: 0 0 20px;
+
+            .channel__form_input {
+                margin-bottom: 20px;
+            }
+        }
+    }
+
+    .channel__close_button {
+        all: unset;
+        cursor: pointer;
+    }
+}
+
+.channel__create_lists_header {
+    display: flex;  
+    column-gap: 20px;
+    align-items: center;
+}
+
+.channel__create_lists_button {
+    display: flex;
+    column-gap: 10px;
+    margin: 15px 0;
+
+    main-button {
+        padding: 5px 10px;
+        box-sizing: border-box;
+    }
+}

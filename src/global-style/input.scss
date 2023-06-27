@@ -1,3 +1,6 @@
+$default: #192b46;
+$active: #223c62;
+
 // Global input style
 .channel__form_input {
     position: relative;
@@ -6,17 +9,52 @@
     margin: 10px 0;
 }
 
+.channel__form_text {
+    position: relative;
+    z-index: 2;
+    height: auto;
+    margin: 10px 0;
+}
+
 .channel__form_label {
     position: absolute;
     left: 10px;
-    top: 7px;
+    top: 11px;
     font-size: 13px;
     color: #fff;
     transition: .1s linear;
     pointer-events: none;
+    background-color: $default;
+    padding: 0 5px 0 5px;
 
     &::first-letter {
         color:#3ac6e8;
+    }
+}
+
+.channel__form_type_text {
+    outline: none;
+    border: 0;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    font-size: 13px;
+    // margin-top: 10px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid #3ac6e8;
+    transition: .1s linear;
+    border-radius: 6px;
+    resize:none;
+    overflow: hidden;
+
+    &:focus ~ .channel__form_label {
+        transition: .1s linear;
+        top: -10px;
+        font-size: 12px;
+        color: #3ac6e8;
     }
 }
 
@@ -28,9 +66,13 @@
     font-size: 13px;
     padding: 0 10px;
     box-sizing: border-box;
+    border-radius: 6px;
     color: #fff;
-    border-bottom: 1px solid #3ac6e8;
+    background-color: transparent;
+    border: 1px solid #3ac6e8;
     transition: .1s linear;
+    resize: none; /* Prevents manual resizing */
+    overflow: hidden;
 
     &:focus ~ .channel__form_label, &:valid ~ .channel__form_label {
         transition: .1s linear;
@@ -50,6 +92,13 @@
         position: relative;
         z-index: 2;
         height: 40px;
+        margin: 10px 0;
+    }
+
+    .channel__form_text {
+        position: relative;
+        z-index: 2;
+        height: auto;
         margin: 10px 0;
     }
     
