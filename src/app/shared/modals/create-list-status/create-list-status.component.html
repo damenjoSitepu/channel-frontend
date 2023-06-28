@@ -18,10 +18,7 @@
     <div class="channel__create_list_status_body">
         <form class="channel__create_list_status_body_input">
             <!-- Name Of Status -->
-            <div style="width: 100%;" class="channel__form_input">
-                <input required autocomplete="off" placeholder="" class="channel__form_type_input" id="channel__title" type="text" name="title"/>
-                <label class="channel__form_label" for="channel__title">Named As</label>
-            </div>
+            <ch-input-text (value)="title = $event" [label]="'Named As'"></ch-input-text>
             <!-- Description -->
             <div style="width: 100%;" class="channel__form_text">
                 <textarea autocomplete="off" placeholder="" class="channel__form_type_text text-poppins" id="channel__list_status_description" (focus)="openLabel('channel__list_status_description_label')" (blur)="closeLabel('channel__list_status_description','channel__list_status_description_label')" (input)="persistLabel('channel__list_status_description','channel__list_status_description_label')" (input)="resizeTextArea('channel__list_status_description')"  name="title"></textarea>

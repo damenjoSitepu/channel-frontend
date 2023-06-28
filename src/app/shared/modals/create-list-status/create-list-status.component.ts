@@ -13,7 +13,8 @@ import { ModalService } from 'src/app/services/modal.service';
   styleUrls: ['./create-list-status.component.scss']
 })
 export class CreateListStatusComponent {
-
+    protected title: string = '';
+    
     constructor(
         private _el: ElementRef,
         private _renderer: Renderer2,
@@ -71,6 +72,8 @@ export class CreateListStatusComponent {
     }
 
     submit(): void {
+        console.log(this.title);
+        return;
         this._modalService.dismiss();
     }
 }

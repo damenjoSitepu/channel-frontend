@@ -11,6 +11,7 @@ import { MessageModule } from "./message/error.module";
 import { SidebarModule } from "./sidebar/sidebar.module";
 import { IconModule } from "./icon/icon.module";
 import { IconsModule } from "./icons/icons.module";
+import { InputModule } from "./input/input.module";
 @NgModule({
     imports: [
         NavbarModule,
@@ -25,7 +26,8 @@ import { IconsModule } from "./icons/icons.module";
         StoreModule,
         EffectsModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        InputModule
     ],
     exports: [
         NavbarModule,
@@ -38,7 +40,8 @@ import { IconsModule } from "./icons/icons.module";
         IconModule,
         IconsModule,
         StoreModule,
-        EffectsModule
+        EffectsModule,
+        InputModule
     ],
 })
 export class ComponentsModule {}

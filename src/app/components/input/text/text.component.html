@@ -1,0 +1,4 @@
+<div style="width: 100%;" class="channel__form_input">
+    <input (input)="recordValue($event)" required autocomplete="off" placeholder="" class="channel__form_type_input" id="{{ for ? for : 'channel__' + label }}" type="text" name="title"/>
+    <label class="channel__form_label" for="{{ for ? for : 'channel__' + label }}">{{ label }}</label>
+</div>
