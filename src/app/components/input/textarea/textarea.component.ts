@@ -1,26 +1,26 @@
-import { Component, ElementRef, Renderer2 } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {DragDropModule} from '@angular/cdk/drag-drop';
-import { ComponentsModule } from 'src/app/components/components.module';
-import { NgClickOutsideDirective } from 'ng-click-outside2';
-import { ModalService } from 'src/app/services/modal.service';
+import { Component, ElementRef, EventEmitter, Input, Output, Renderer2 } from '@angular/core';
 
 @Component({
-  selector: 'app-create-list-status',
-  standalone: true,
-  imports: [CommonModule, DragDropModule, ComponentsModule, NgClickOutsideDirective],
-  templateUrl: './create-list-status.component.html',
-  styleUrls: ['./create-list-status.component.scss']
+  selector: 'ch-input-textarea',
+  templateUrl: './textarea.component.html',
+  styleUrls: ['./textarea.component.scss']
 })
-export class CreateListStatusComponent {
-    protected title: string = '';
-    protected description: string = '';
+export class TextareaComponent {
+    @Input('label') label: string = 'Label';
+    @Output() value: EventEmitter<string> = new EventEmitter<string>();
+    protected randomNumber = this.generateRandomNumber();
+    protected randomLabelNumber = this.generateRandomNumber();
 
     constructor(
         private _el: ElementRef,
-        private _renderer: Renderer2,
-        private _modalService: ModalService
-    ) {}
+        private _renderer: Renderer2
+    ) { }
+
+    generateRandomNumber(): number {
+        const min = Math.ceil(1);
+        const max = Math.floor(10000000);
+        return Math.floor(Math.random() * (max - min) + min);
+    }
 
     resizeTextArea(id: string): void {
         const el = this._el.nativeElement.querySelector("#" + id);
@@ -65,14 +65,7 @@ export class CreateListStatusComponent {
         el.blur();
     }
 
-    clickOutsideOperationsOptions(e: Event): void {
-        e.stopPropagation();
-        if (!(e.target as HTMLElement).classList.contains('channel__list_status_main_options_create')) {
-            this._modalService.dismiss();
-        }
-    }
-
-    submit(): void {
-        this._modalService.dismiss();
+    recordValue(e: any): void {
+        this.value.emit(e.target.value);
     }
 }

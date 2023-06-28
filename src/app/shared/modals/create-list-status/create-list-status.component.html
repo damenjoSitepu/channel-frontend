@@ -20,10 +20,7 @@
             <!-- Name Of Status -->
             <ch-input-text (value)="title = $event" [label]="'Named As'"></ch-input-text>
             <!-- Description -->
-            <div style="width: 100%;" class="channel__form_text">
-                <textarea autocomplete="off" placeholder="" class="channel__form_type_text text-poppins" id="channel__list_status_description" (focus)="openLabel('channel__list_status_description_label')" (blur)="closeLabel('channel__list_status_description','channel__list_status_description_label')" (input)="persistLabel('channel__list_status_description','channel__list_status_description_label')" (input)="resizeTextArea('channel__list_status_description')"  name="title"></textarea>
-                <label id="channel__list_status_description_label" class="channel__form_label" for="channel__list_status_description">Description</label>
-            </div>
+            <ch-input-textarea (value)="description = $event" [label]="'Description'"></ch-input-textarea>
         </form>
 
 
