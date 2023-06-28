@@ -26,10 +26,6 @@ $active: #223c62;
     pointer-events: none;
     background-color: $default;
     padding: 0 5px 0 5px;
-
-    &::first-letter {
-        color:#3ac6e8;
-    }
 }
 
 .channel__form_type_text {
@@ -110,10 +106,6 @@ $active: #223c62;
         color: #fff;
         transition: .1s linear;
         pointer-events: none;
-    
-        &::first-letter {
-            color:#3ac6e8;
-        }
     }
     
     .channel__form_type_input {
