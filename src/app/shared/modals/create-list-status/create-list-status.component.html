@@ -21,10 +21,8 @@
             <ch-input-text (value)="title = $event" [label]="'Named As'"></ch-input-text>
             <!-- Description -->
             <ch-input-textarea (value)="description = $event" [label]="'Description'"></ch-input-textarea>
-
-            <div class="channel__input_color_selection">
-                <label class="channel__form_labels">Choose Color Status</label>
-            </div>
+            <!-- Color Palette -->
+            <ch-select-color [label]="'Choose Color Status'"></ch-select-color>
         </form>
 
 
